@@ -89,35 +89,27 @@
       var password="fjioa8";
       var b_account="jacktest01";
       var b_password="egiga0001";
-      $.ajax({
-        type: "POST",
-        url: "http://149.129.82.29/HuijiaCare_CAPI/mat_status_record_download.php",
-        dataType: 'json',
-        crossDomain: true,
-        headers: {
-          // 'Access-Control-Allow-Origin': '*',
-          // "Accept": "application/json",
-          // "Authorization": "Basic " + btoa(username + ":" + password)
-          "Authorization": "Basic " + username + ":" + password
+
+      var settings = {
+        "url": "http://149.129.82.29/HuijiaCare_CAPI/mat_status_record_download.php",
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+          "Authorization": "Basic " + btoa(username + ":" + password),
+          "Content-Type": "application/json"
         },
-	    "crossDomain": true,
-	    "Access-Control-Allow-Origin": "*",
-        data: {
+        "data": JSON.stringify({
           "b_account": b_account,
           "b_password": b_password,
-          "starttime": "2021-07-25 04:23:11",
-          "endtime": "2021-07-25 05:23:11",
-          '_token': "{{ csrf_token() }}"
-        },
-        success: function (res){
-          debugger;
-            console.log(res);
-            console.log('d');
-        },
-        error: function(err) {
+          "starttime": "2021-07-25 05:00:00",
+          "endtime": "2021-07-25 06:00:00"
+        }),
+      };
 
-          console.log(err);
-        }
+      $.ajax(settings).done(function (res) {
+        console.log(res);
+      }).fail(function(err) {
+        console.log(err);
       });
     });
 });
