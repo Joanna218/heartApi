@@ -37,6 +37,8 @@
     <script src="{{ asset('theme/vendor/js/material-ripple.js') }}"></script>
     <script src="{{ asset('theme/vendor/js/layout-helpers.js') }}"></script>
 
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css' integrity='sha512-aEe/ZxePawj0+G2R+AaIxgrQuKT68I28qh+wgLrcAJOz3rxCP+TwrK5SPN+E5I+1IQjNtcfvb96HDagwrKRdBw==' crossorigin='anonymous'/>
+
     <!-- Core scripts -->
     <script src="{{ asset('theme/vendor/js/pace.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -46,6 +48,20 @@
     <link rel="stylesheet" href="{{ asset('theme/vendor/libs/plyr/plyr.css') }}">
 
     <link rel="stylesheet" href="{{ asset(mix('css/front.css')) }}">
+
+
+
+
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.18.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/locale/zh-tw.js"></script>
+<link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+<script src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+
 
     <!-- @yield('styles') -->
 
@@ -77,11 +93,11 @@
     <div class="bg-primary"></div>
 </div> -->
 
-<!-- @yield('content') -->
+@yield('content')
 
 <!-- Core scripts -->
 <!-- Core scripts -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 <script src="{{ asset('/theme/vendor/libs/popper/popper.js') }}"></script>
 <script src="{{ asset('/theme/vendor/js/bootstrap.js') }}"></script>
 
@@ -92,7 +108,7 @@
 <!-- Page -->
 <script src="{{ asset(mix('js/front.js')) }}"></script>
 
-<!-- @yield('scripts') -->
+@yield('scripts')
 
 </body>
 </html>
