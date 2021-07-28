@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="{{ asset('/theme/vendor/fonts/linearicons.css') }}">
     <link rel="stylesheet" href="{{ asset('/theme/vendor/fonts/open-iconic.css') }}">
     <link rel="stylesheet" href="{{ asset('/theme/vendor/fonts/pe-icon-7-stroke.css') }}">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/css/bootstrap.min.css' integrity='sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==' crossorigin='anonymous'/>
+    <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/css/bootstrap.min.css' integrity='sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==' crossorigin='anonymous'/> -->
 
     <!-- Core stylesheets -->
     <link rel="stylesheet" href="{{ asset('theme/vendor/css/rtl/bootstrap.css') }}" class="theme-settings-bootstrap-css">

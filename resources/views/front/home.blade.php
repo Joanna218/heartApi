@@ -95,7 +95,7 @@
 <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.colVis.min.js"></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/js/bootstrap.min.js' integrity='sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==' crossorigin='anonymous'></script>
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/js/bootstrap.min.js' integrity='sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==' crossorigin='anonymous'></script> -->
 
 <script>
 
@@ -151,7 +151,7 @@ var idioma= {
       "info": true,
       "autoWidth": true,
       "language": idioma,
-      "lengthMenu": [[10,20,100, -1],[10,20,100,"全部"]],
+      "lengthMenu": [[100,200, -1],[100,200,"全部"]],
       dom: 'Bfrt<"col-md-6 inline"i> <"col-md-6 inline"p>',
       buttons: {
             dom: {
@@ -230,7 +230,7 @@ var idioma= {
         "info": true,
         "autoWidth": true,
         "language": idioma,
-        "lengthMenu": [[10,20,100, -1],[10,20,100,"全部"]],
+        "lengthMenu": [[100,200, -1],[100,200,"全部"]],
         dom: 'Bfrt<"col-md-6 inline"i> <"col-md-6 inline"p>',
         buttons: {
               dom: {
@@ -348,21 +348,33 @@ var idioma= {
             // "endtime": "2021/07/25 06:28:52"
           }),
         };
+        var errMsgCode = ["0","1","2","3"];
 
         $.ajax(settings).done(function (res) {
-          if (JSON.parse(res).userMessage == "1") {
+
+          if (JSON.parse(res).userMessage != "-1") {
+            // 表示伺服器驗證成功
+            if (errMsgCode.indexOf(JSON.parse(res).userMessage) == "-1") {
+              // 表示api成功
+              showTable(JSON.parse(res).userMessage);
+              $('#modal').modal('hide');
+              // console.log(res);
+            } else {
+              $('.sending').css('display','none');
+              $('.sendFail').css('display','block');
+              $('.modal-check ').css('display','block');
+              $('.modal-footer').css('display','block');
+            }
+          }else {
             $('.sending').css('display','none');
             $('.sendFail').css('display','block');
             $('.modal-check ').css('display','block');
             $('.modal-footer').css('display','block');
-          } else {
-            showTable(JSON.parse(res).userMessage);
-            $('#modal').modal('hide');
-            console.log(res);
           }
+
         }).fail(function(err) {
           $('#modal').modal('hide');
-          console.log(err);
+          // console.log(err);
         });
       }
 

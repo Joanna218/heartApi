@@ -186,3 +186,14 @@ div.dataTables_wrapper div.dataTables_filter {
 #table_wrapper {
   margin-top: 50px;
 }
+
+.dropdown-menu {
+  margin: initial;
+  box-shadow: initial;
+  -webkit-animation: none;
+          animation: none;
+}
+
+.form-label, .col-form-label {
+  font-size: 13px;
+}
